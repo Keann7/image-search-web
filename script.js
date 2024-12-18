@@ -4,6 +4,7 @@ const formEl = document.querySelector("form");
 const searchInputEl = document.getElementById("search-input");
 const searchResultsEl = document.querySelector(".search-results");
 const showMoreButtonEl = document.getElementById("show-more-button");
+const toTop = document.querySelector(".to-top");
 
 let inputData = "";
 let page = 1;
@@ -52,3 +53,13 @@ formEl.addEventListener("submit", (event) => {
 showMoreButtonEl.addEventListener("click", () => {
   searchImages();
 });
+
+// to top button
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 100) {
+    toTop.classList.add("active");
+  } else {
+    toTop.classList.remove("active");
+  }
+})
